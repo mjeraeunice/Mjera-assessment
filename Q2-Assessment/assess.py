@@ -78,3 +78,18 @@ recipe.make_food()
 
 # create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
 # these classes might relate to each other through inheritance.
+class Species:
+    def __init__(self, diet, lifespan, migration):
+        self.diet = diet
+        self.lifespan = lifespan
+        self.migration = migration
+
+class Predator(Species):
+    def __init__(self, diet, lifespan, migration, hunting):
+        super().__init__(diet, lifespan, migration)
+        self.hunting_style = hunting
+
+class Prey(Species):
+    def __init__(self, diet, lifespan, migration, herd_size):
+        super().__init__(diet, lifespan, migration)
+        self.herd_size = herd_size
